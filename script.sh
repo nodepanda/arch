@@ -1,8 +1,8 @@
 pacstrap /mnt base base-devel vim grub networkmanager openssh firewalld zsh zsh-completions grml-zsh-config
 genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt curl -o /etc/vconsole.conf -L https://raw.github.com/nodepanda/arch-linux-settings/master/vconsole.conf
-arch-chroot /mnt curl -o /etc/locale.conf -L https://raw.github.com/nodepanda/arch-linux-settings/master/locale.conf
+arch-chroot /mnt curl -o /etc/vconsole.conf -L https://raw.github.com/nodepanda/arch/master/vconsole.conf
+arch-chroot /mnt curl -o /etc/locale.conf -L https://raw.github.com/nodepanda/arch/master/locale.conf
 arch-chroot /mnt mkinitcpio -p linux
 
 arch-chroot /mnt sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
